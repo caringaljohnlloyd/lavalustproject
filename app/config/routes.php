@@ -44,5 +44,18 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
-$router->get('/', 'Welcome::index');
+$router->get('/', 'Welcome::login');
+$router->get('/home', 'Welcome::index');
 $router->get('/bago', 'Welcome::bago');
+$router->get('/service', 'Welcome::service');
+$router->get('/room', 'Welcome::room');
+$router->get('/contact', 'Welcome::contact');
+$router->post('add', 'Welcome::add');
+$router->get('/login', 'Welcome::login');
+$router->get('/register', 'Welcome::register');
+
+$router->post('/validate_reg', 'Welcome::register_val');
+$router->post('/validate_login', 'Welcome::login_val');
+$router->post('/email', 'Welcome::email');
+$router->get('/verify', 'Welcome::account');
+$router->post('/check', 'Welcome::check');
