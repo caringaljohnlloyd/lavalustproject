@@ -53,6 +53,16 @@ $router->get('/contact', 'Welcome::contact');
 $router->post('add', 'Welcome::add');
 $router->get('/login', 'Welcome::login');
 $router->get('/register', 'Welcome::register');
+$router->get('/roomdata', 'Welcome::roomdata');
+$router->get('/admin', 'Welcome::admin');
+$router->get('/bookingDashboard', 'Welcome::bookingDashboard');
+$router->get('delete/(:num)','Welcome::delete');
+$router->get('/edit/(:num)', 'Welcome::edit');
+$router->match('/edit/(:num)', 'Welcome::update','GET|POST');
+$router->get('/logout', 'Welcome::logout');
+$router->post('feedback', 'Welcome::feedback');
+
+
 
 $router->post('/validate_reg', 'Welcome::register_val');
 $router->post('/validate_login', 'Welcome::login_val');

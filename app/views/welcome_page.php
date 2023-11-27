@@ -6,13 +6,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 <head>
     <meta charset="utf-8">
-    <title>Hotelier - Hotel HTML Template</title>
+    <title>Eduardo's Resort</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="<?=base_url();?>../public/img/favicon.ico" rel="icon">
+    <link href="public/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,26 +24,36 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="<?=base_url();?>public/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="<?=base_url();?>public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="<?=base_url();?>public/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="public/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="public/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="<?=base_url();?>public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="<?=base_url();?>public/css/style.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .img-color a img {
+    width: 60px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjusts the height to maintain aspect ratio */
+    display: inline-block; /* Ensures the image is displayed as an inline block */
+  }
+  </style>
 </head>
 
 <body>
     <div class="container-xxl bg-white p-0">
         
         <!-- Header Start -->
-        <div class="container-fluid bg-dark px-0">
+        <div class="img-color container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
                     <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">Hotelier</h1>
+                    <img src="public/img/logo.png" >
+                        <h4 class="m-0 text-primary text-uppercase">Eduardo's Resort</h4>
                     </a>
                 </div>
                 <div class="col-lg-9">
@@ -91,7 +101,10 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                                 </div>
                                 <a href="<?=site_url('index.php/contact')?> " class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>
+                            <button  class="btn btn-primary logout-logo-btn">
+  <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?>">Logout</a>
+  </i>
+</button>
                         </div>
                     </nav>
                 </div>
@@ -151,13 +164,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="checkin" class="text-white">Checkin</label>
-                            <input type="date" name="checkin" id="checkin" class="form-control">
+                            <input placeholder="Checkin" type="date" name="checkin" id="checkin" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="checkout" class="text-white">Checkout</label>
-                            <input type="date" name="checkout" id="checkout" class="form-control">
+                            <input  placeholder="Checkout" type="date" name="checkout" id="checkout" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -255,6 +268,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                     <h6 class="section-title text-center text-primary text-uppercase">Our Rooms</h6>
                     <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Rooms</span></h1>
                 </div>
+               
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden">
@@ -262,9 +276,10 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                                 <img class="img-fluid" src="public/img/room-1.jpg" alt="">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
                             </div>
+                           
                             <div class="p-4 mt-2">
                                 <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0">Junior Suite</h5>
+                                    <h5 class="mb-0">asdas</h5>
                                     <div class="ps-2">
                                         <small class="fa fa-star text-primary"></small>
                                         <small class="fa fa-star text-primary"></small>
@@ -273,12 +288,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                                         <small class="fa fa-star text-primary"></small>
                                     </div>
                                 </div>
+                               
                                 <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>asdBed</small>
+                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i> asdBath</small>
+                                    <small><i class="fa fa-wifi text-primary me-2"></i> asd</small>
                                 </div>
-                                <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                <p class="text-body mb-3"> asdas</p>
                                 <div class="d-flex justify-content-between">
                                     <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
@@ -348,7 +364,8 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
+      
         <!-- Room End -->
 
 
@@ -472,16 +489,31 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             </div>
         </div>
         <!-- Service End -->
-
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title text-center text-primary text-uppercase">FEEDBACKS</h6>
+                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Feedbacls</span></h1>
+                </div>
+        <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="owl-carousel testimonial-carousel py-5">
+            <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
+            <form action="<?php echo site_url('feedback');?>" method="post">
+                    <textarea name="feedback" class="form-control mb-3" placeholder="Enter your feedback here..." required></textarea>
+                    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Testimonial Start -->
-        <div class="container-xxl testimonial my-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s">
+        <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel py-5">
                     <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
                         <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="../public/img/testimonial-1.jpg" style="width: 45px; height: 45px;">
+                            <img class="img-fluid flex-shrink-0 rounded" src="public/img/testimonial-1.jpg" style="width: 45px; height: 45px;">
                             <div class="ps-3">
                                 <h6 class="fw-bold mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -489,32 +521,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                         </div>
                         <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="../public/img/testimonial-2.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="../public/img/testimonial-3.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
-                </div>
-            </div>
-        </div>
+                    </div>
+
         <!-- Testimonial End -->
+
+        
 
 
         <!-- Team Start -->
@@ -689,19 +702,31 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="<?=base_url();?>https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="<?=base_url();?>https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/wow/wow.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/easing/easing.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/waypoints/waypoints.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/counterup/counterup.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="<?=base_url();?>../public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script src="public/lib/wow/wow.min.js"></script>
+    <script src="public/lib/easing/easing.min.js"></script>
+    <script src="public/lib/waypoints/waypoints.min.js"></script>
+    <script src="public/lib/counterup/counterup.min.js"></script>
+    <script src="public/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="public/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="public/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="public/js/main.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    });
+</script>
+
 </body>
 
 </html>

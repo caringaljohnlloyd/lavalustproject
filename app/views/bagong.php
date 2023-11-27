@@ -75,8 +75,8 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="<?=site_url('/home')?> " class="nav-item nav-link active">Home</a>
-                                <a href="<?=site_url('index.php/bago')?> "class="nav-item nav-link">About</a>
+                                <a href="<?=site_url('/home')?> " class="nav-item nav-link ">Home</a>
+                                <a href="<?=site_url('index.php/bago')?> "class="nav-item nav-link active">About</a>
                                 <a href="<?=site_url('index.php/service')?> " class="nav-item nav-link">Services</a>
                                 <a href="<?=site_url('index.php/room')?>" class="nav-item nav-link">Rooms</a>
                                 <div class="nav-item dropdown">
@@ -173,6 +173,7 @@
                         <div class="row g-3 pb-4">
                             <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="border rounded p-1">
+                                    
                                     <div class="border rounded text-center p-4">
                                         <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
                                         <h2 class="mb-1" data-toggle="counter-up">1234</h2>

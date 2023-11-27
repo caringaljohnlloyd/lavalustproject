@@ -167,7 +167,17 @@ public function check() {
 
 
 
+	public function __construct()
+    {
+        parent::__construct();
+        $this->call->model('Sched_Model');
+		$this->call->helper('url');
+        $this->call->library('session');
+        $this->call->library('form_validation');
+		$this->call->model('User_Model');
+        $this->call->model('Room_Model');
 
+    }
 
 
 
@@ -189,16 +199,7 @@ public function check() {
 		$this->call->helper('url');
 		$this->call->view('Contact');
 	}
-	public function __construct()
-    {
-        parent::__construct();
-        $this->call->model('Sched_Model');
-		$this->call->helper('url');
-        $this->call->library('session');
-        $this->call->library('form_validation');
-		$this->call->model('User_Model');
 
-    }
     public function add()
     {
         $checkin = $this->io->post('checkin');
@@ -207,7 +208,70 @@ public function check() {
         $child = $this->io->post('child');
         $this->Sched_Model->add($checkin, $checkout, $adult, $child);
 		$this->call->helper('url');
-        redirect('/');
+        redirect('/home');
     }
+    public function roomdata()
+    {
+        $data = $this->Room_Model->read();
+        $this->call->view('welcome_page', $data);
+    }
+ 
+    public function admin(){
+        $this->call->view('admin');
+    }
+
+    public function bookingDashboard(){
+        $data = $this->Room_Model->getdata();
+        $this->call->view('BookingAdmin', $data);
+    }
+    public function delete($id){
+        if($this->Room_Model->delete($id))
+        redirect('/bookingDashboard');
+    }
+
+    public function edit($id){
+        $data = $this->Room_Model->booking_data($id);
+        $this->call->view('editBooking', $data);
+    }
+    public function update(){
+        $id=$this->io->post('id');
+        $checkin = $this->io->post('checkin');
+        $checkout = $this->io->post('checkout');
+        $adult = $this->io->post('adult');
+        $child = $this->io->post('child');
+        $this->Room_Model->edit($id,$checkin, $checkout,$adult,$child);
+        redirect('/bookingDashboard');
+    }
+    public function logout(){
+        unset($_SESSION['email']);
+        return $this->call->view('/register');
+    }
+    
+    public function feedback()
+    {
+        
+        $crud_id = 'id';
+        $feedback = $this->io->post('feedback');
+        $this->Room_Model->send_feedback($crud_id,$feedback);
+        $this->call->helper('url');
+        redirect('/home');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
 ?>
