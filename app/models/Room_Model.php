@@ -46,7 +46,6 @@ class Room_Model extends Model
     {
        
         $data = array(
-            'id' => $id,
             'feedback' => $feedback,
         );
         return $this->db->table('feedback')
