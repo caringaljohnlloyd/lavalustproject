@@ -25,10 +25,10 @@
                         <div class="card-body p-4">
                         <a href="<?= site_url('/bookingDashboard') ?>" class="btn btn-primary mb-3">BACK</a>
                             <h3 class="mb-4">Booking Update</h3>
-                            <form action="<?php echo site_url('edit/');?><?=$data['id'];?>" method="post">
+                            <form action="<?php echo site_url('edit/');?><?=$data['sched_id'];?>" method="post">
                                 <div class="mb-3">
                                     <label for="Checkin" class="form-label">Checkin</label>
-                                    <input type="hidden" name="id" value="<?=$data['id']?>">
+                                    <input type="hidden" name="sched_id" value="<?=$data['sched_id']?>">
                                     <input type="text" name="checkin" id="Checkin" value="<?=$data['checkin']?>" class="form-control">
                                 </div>
                                 <div class="mb-3">
@@ -42,6 +42,10 @@
                                 <div class="mb-3">
                                     <label for="Child" class="form-label">Child</label>
                                     <input type="text" name="child" id="Child" value="<?=$data['child']?>" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Child" class="form-label">Manifest</label>
+                                    <input type="textarea" name="manifest" id="manifest" value="<?=$data['manifest']?>" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <input class="btn btn-success btn-lg" type="submit" value="Submit">

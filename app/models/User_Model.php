@@ -13,12 +13,16 @@ class User_Model extends Model {
     }
 
     public function insert($username, $password,$email,$verification, $is_verify){
+        $role = 'user';
+
         $data=array(
             'username'=>$username,
             'password'=>$password,
             'email'=>$email,
             'code'=>$verification,
             'is_verified'=>$is_verify,
+            'role' => $role, 
+
         );
         $result= $this->db->table('crud')->insert($data);
     }

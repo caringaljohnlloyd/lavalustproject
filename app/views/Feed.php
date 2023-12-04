@@ -10,25 +10,25 @@
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
-  <link href="<?= base_url() ?>public/plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
-  <link href="<?= base_url() ?>public/plugins/simplebar/simplebar.css" rel="stylesheet" />
+  <link href="public/plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="public/plugins/simplebar/simplebar.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- <?= base_url() ?>public/PLUGINS CSS STYLE -->
-  <link href="<?= base_url() ?>public/plugins/nprogress/nprogress.css" rel="stylesheet" />
+  <!-- public/PLUGINS CSS STYLE -->
+  <link href="public/plugins/nprogress/nprogress.css" rel="stylesheet" />
   
   
   
   
-  <link href="<?= base_url() ?>public/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="public/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
   
   
   
-  <link href="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+  <link href="public/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
   
   
   
-  <link href="<?= base_url() ?>public/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <link href="public/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
   
   
   
@@ -36,17 +36,17 @@
   
   
   
-  <link href="<?= base_url() ?>public/plugins/toaster/toastr.min.css" rel="stylesheet" />
+  <link href="public/plugins/toaster/toastr.min.css" rel="stylesheet" />
   
   
   <!-- MONO CSS -->
-  <link id="main-css-href" rel="stylesheet" href="<?= base_url() ?>public/css/admin.css" />
+  <link id="main-css-href" rel="stylesheet" href="public/css/admin.css" />
 
   
 
 
   <!-- FAVICON -->
-  <link href="<?= base_url() ?>public/<?= base_url() ?>public/images/favicon.png" rel="shortcut icon" />
+  <link href="public/public/images/favicon.png" rel="shortcut icon" />
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -56,7 +56,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script src="<?= base_url() ?>public/plugins/nprogress/nprogress.js"></script>
+  <script src="public/plugins/nprogress/nprogress.js"></script>
   <style>
       .app-brand a img {
     width: 60px; /* Adjust the width as needed */
@@ -90,7 +90,7 @@
             <!-- Aplication Brand -->
             <div class="app-brand">
               <a href="/index.html">
-                <img src="<?= base_url() ?>public/img/logo.png" >
+                <img src="public/img/logo.png" >
                 <span class="brand-name">Eduardo's Resort</span>
               </a>
             </div>
@@ -115,9 +115,9 @@
 
                 
                   <li
-                  class="active"
+                 
                    >
-                    <a class="sidenav-item-link  nav-link active" href="<?= site_url('/bookingDashboard'); ?>">
+                    <a class="sidenav-item-link  " href="<?= site_url('/bookingDashboard'); ?>">
                       <i class="mdi mdi-chart-line"></i>
                       <span class="nav-text">Booking Dashboard</span>
                     </a>
@@ -135,16 +135,18 @@
                 
 
                 
-                  <li
+                  <li  class="active"
                    >
-                    <a class="sidenav-item-link" href="<?= site_url('/getFeed') ?> ">
+                    <a class="sidenav-item-link nav-link active" href="<?= site_url('/getFeed'); ?>">
                       <i class="mdi mdi-wechat"></i>
                       <span class="nav-text">Chat</span>
                     </a>
                   </li>
                 
 
- </div>
+
+
+</div>
           <div class="sidebar-footer">
               <div class="sidebar-footer-content">
                 <ul class="d-flex">
@@ -160,6 +162,7 @@
    </div>
    
         </aside>
+
 
       
 
@@ -242,7 +245,7 @@
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="<?= base_url() ?>public/images/user/user-sm-02.jpg" alt="User Image">
+                                  <img src="public/images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -276,7 +279,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="<?= base_url() ?>public/images/user/user-sm-03.jpg" alt="User Image">
+                                  <img src="public/images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -335,7 +338,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="<?= base_url() ?>public/images/user/user-sm-01.jpg" alt="User Image">
+                                  <img src="public/images/user/user-sm-01.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -352,7 +355,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="<?= base_url() ?>public/images/user/user-sm-03.jpg" alt="User Image">
+                                  <img src="public/images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -369,7 +372,7 @@
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="<?= base_url() ?>public/images/user/user-sm-02.jpg" alt="User Image">
+                                  <img src="public/images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -387,7 +390,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="<?= base_url() ?>public/images/user/user-sm-04.jpg" alt="User Image">
+                                  <img src="public/images/user/user-sm-04.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -474,7 +477,7 @@
                   <!-- User Account -->
                   <li class="dropdown user-menu">
                     <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                      <img src="<?= base_url() ?>public/images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
+                      <img src="public/images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
                       <span class="d-none d-lg-inline-block">John Doe</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -520,74 +523,59 @@
     <table class="  table   table-striped table-hover table-bordered text-center ">
         
     <tr >
-            <th>ID</th>
-            <th>Checkin</th>
-            <th>Checkout</th>
-            <th>Adult</th>
-            <th>Child</th>
-            <th>Manifest</th>
-            <th>User</th>
 
+            <th>ID</th>
+            <th>User</th>
+            <th>Feedback</th>
             <th>Action</th>
+
         </tr>
 
       
         <?php foreach ($data as $datas) : ?>
             <tr>
             <td>
-                    <?= $datas['sched_id'] ?>
-                </td>
-                <td>
-                    <?= $datas['checkin'] ?>
-                </td>
-                <td>
-                    <?= $datas['checkout'] ?>
-                </td>
-                <td>
-                    <?= $datas['adult'] ?>
-                </td>
-                <td>
-                    <?= $datas['child'] ?>
-                </td>
-                <td>
-                    <?= $datas['manifest'] ?>
+                    <?= $datas['feedback_id'] ?>
                 </td>
                 <td>
                     <?= $datas['username'] ?>
                 </td>
                 <td>
+                    <?= $datas['feedback'] ?>
+                </td>
+         
+                <td>
                 
-                    <a href="<?= site_url('edit/' . $datas['sched_id']) ?>" class="btn btn-warning mb-3">Edit</a>
-                    <a href="<?= site_url('delete/' . $datas['sched_id']) ?>" class="btn btn-danger mb-3">Delete</a>
+                    <a href="<?= site_url('fdelete/' . $datas['feedback_id']) ?>" class="btn btn-danger mb-3">Delete</a>
                 </td>
             </tr>
             
-        <?php endforeach; ?>
+        <?php endforeach; ?>    
 
     </table>
-    <script src="<?= base_url() ?>public/plugins/jquery/jquery.min.js"></script>
-                    <script src="<?= base_url() ?>public/plugins/bootstrap/<?= base_url() ?>public/js/bootstrap.bundle.min.js"></script>
-                    <script src="<?= base_url() ?>public/plugins/simplebar/simplebar.min.js"></script>
-                    <script src="https://unpkg.com/hotkeys-<?= base_url() ?>public/js/dist/hotkeys.min.js"></script>
+    <script src="public/plugins/jquery/jquery.min.js"></script>
+                    <script src="public/plugins/bootstrap/public/js/bootstrap.bundle.min.js"></script>
+                    <script src="public/plugins/simplebar/simplebar.min.js"></script>
+                    <script src="https://unpkg.com/hotkeys-public/js/dist/hotkeys.min.js"></script>
 
                     
                     
-                    <script src="<?= base_url() ?>public/plugins/apexcharts/apexcharts.js"></script>
+                    <script src="public/plugins/apexcharts/apexcharts.js"></script>
                     
                     
                     
-                    <script src="<?= base_url() ?>public/plugins/DataTables/DataTables-1.10.18/<?= base_url() ?>public/js/jquery.dataTables.min.js"></script>
+                    <script src="public/plugins/DataTables/DataTables-1.10.18/public/js/jquery.dataTables.min.js"></script>
                     
                     
                     
-                    <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
-                    <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
-                    <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-us-aea.js"></script>
+                    <script src="public/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+                    <script src="public/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
+                    <script src="public/plugins/jvectormap/jquery-jvectormap-us-aea.js"></script>
                     
                     
                     
-                    <script src="<?= base_url() ?>public/plugins/daterangepicker/moment.min.js"></script>
-                    <script src="<?= base_url() ?>public/plugins/daterangepicker/daterangepicker.js"></script>
+                    <script src="public/plugins/daterangepicker/moment.min.js"></script>
+                    <script src="public/plugins/daterangepicker/daterangepicker.js"></script>
                     <script>
                       jQuery(document).ready(function() {
                         jQuery('input[name="dateRange"]').daterangepicker({
@@ -612,14 +600,14 @@
                     
                     
                     
-                    <script src="<?= base_url() ?>public/plugins/toaster/toastr.min.js"></script>
+                    <script src="public/plugins/toaster/toastr.min.js"></script>
 
                     
                     
-                    <script src="<?= base_url() ?>public/js/mono.js"></script>
-                    <script src="<?= base_url() ?>public/js/chart.js"></script>
-                    <script src="<?= base_url() ?>public/js/map.js"></script>
-                    <script src="<?= base_url() ?>public/js/custom.js"></script>
+                    <script src="public/js/mono.js"></script>
+                    <script src="public/js/chart.js"></script>
+                    <script src="public/js/map.js"></script>
+                    <script src="public/js/custom.js"></script>
 </body>
 
 </html>

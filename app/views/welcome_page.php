@@ -22,21 +22,24 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
         rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+  <link href="public/plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="public/plugins/simplebar/simplebar.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="<?= base_url() ?>public/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="public/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="public/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?= base_url() ?>public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url() ?>public/css/style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="<?= base_url() ?>https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         .img-color a img {
             width: 60px;
@@ -94,10 +97,10 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="<?= site_url('/home') ?> " class="nav-item nav-link active">Home</a>
+                                <a href="<?= site_url('index.php/home') ?> " class="nav-item nav-link active">Home</a>
                                 <a href="<?= site_url('index.php/bago') ?> " class="nav-item nav-link">About</a>
                                 <a href="<?= site_url('index.php/service') ?> " class="nav-item nav-link">Services</a>
-                                <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link">Rooms</a>
+                                <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link">Manifest</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu rounded-0 m-0">
@@ -108,8 +111,8 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                                 </div>
                                 <a href="<?= site_url('index.php/contact') ?> " class="nav-item nav-link">Contact</a>
                             </div>
-                            <button class="btn btn-primary logout-logo-btn">
-                                <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?>">Logout</a>
+                            <button class="btn btn-primary text-dark logout-logo-btn">
+                                <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?> ">Logout</a>
                                 </i>
                             </button>
                         </div>
@@ -201,7 +204,15 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                                     <input placeholder="No. of Child" type="number" name="child" id="child"
                                         class="form-control">
                                 </div>
+
                             </div>
+                            <div class="col-md-15">
+
+                            <div class="form-group">
+                    <label for="manifest" class="form-label">Your name / Your Age</label>
+                    <textarea class="form-control" id="manifest" name="manifest" rows="3" placeholder="Enter Your Name / Your Age" required></textarea>
+                </div>
+    </div> 
                             <div class="col-md-13">
                                 <input class="btn btn-primary btn-lg col-md-12" type="submit" value="Submit">
                             </div>
@@ -328,7 +339,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
 
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title text-center text-primary text-uppercase">FEEDBACKS</h6>
-            <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Feedbacls</span></h1>
+            <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Feedbacks</span></h1>
         </div>
         <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s"
             style="margin-bottom: 90px;">
@@ -546,17 +557,17 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
 
     <!-- JavaScript Libraries -->
 
-    <script src="<?= base_url() ?>public/lib/wow/wow.min.js"></script>
-    <script src="<?= base_url() ?>public/lib/easing/easing.min.js"></script>
-    <script src="<?= base_url() ?>public/lib/waypoints/waypoints.min.js"></script>
-    <script src="<?= base_url() ?>public/lib/counterup/counterup.min.js"></script>
-    <script src="<?= base_url() ?>public/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="<?= base_url() ?>public/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="<?= base_url() ?>public/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="<?= base_url() ?>public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="../public/lib/wow/wow.min.js"></script>
+    <script src="../public/lib/easing/easing.min.js"></script>
+    <script src="../public/lib/waypoints/waypoints.min.js"></script>
+    <script src="../public/lib/counterup/counterup.min.js"></script>
+    <script src="../public/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../public/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../public/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="<?= base_url() ?>public/js/main.js"></script>
+    <script src="../public/js/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');

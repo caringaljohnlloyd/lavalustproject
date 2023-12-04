@@ -23,6 +23,9 @@ class Welcome extends Controller
 
     public function login()
     {
+        if(!isset($_SESSION['id'])){
+        redirect(site_url('/'));
+        }
         $this->call->helper('url');
         $this->call->view('login');
     }
@@ -99,6 +102,7 @@ class Welcome extends Controller
         }
     }
 
+
     public function login_val()
     {
         $this->form_validation
@@ -107,22 +111,29 @@ class Welcome extends Controller
             ->min_length(8)
             ->name('email')
             ->valid_email();
-
+    
         if ($this->form_validation->run() == FALSE) {
             $this->call->view('login');
         } else {
             $email = $this->io->post('email');
             $password = $this->io->post('password');
-
+    
             $user = $this->User_Model->get_user_by_email($email);
-
+    
             if ($user) {
+                $_SESSION['id']=$user['id'];
                 if (password_verify($password, $user['password'])) {
                     if ($user['is_verified']) {
-                        $this->call->view('welcome_page');
+                        if ($user['role'] === 'admin') {
+                            $data = $this->Manifest_Model->read();
+
+                            $this->call->view('admin',$data);
+                        } else {
+                            $this->call->view('welcome_page');
+                        }
                     } else {
                         $this->call->helper('url');
-
+    
                         $data['email'] = $this->io->post('email');
                         $data['error_message'] = 'Verify Your Email';
                         $this->call->view('account_verify', $data);
@@ -137,7 +148,7 @@ class Welcome extends Controller
             }
         }
     }
-
+    
     public function sendVerificationEmail($to, $verificationCode)
     {
         $mail = new PHPMailer(true);
@@ -185,6 +196,10 @@ class Welcome extends Controller
         $this->call->library('form_validation');
         $this->call->model('User_Model');
         $this->call->model('Room_Model');
+        $this->call->model('Manifest_Model');
+        $this->call->model('Feed_Model');
+
+
 
     }
 
@@ -213,24 +228,8 @@ class Welcome extends Controller
         $this->call->view('Contact');
     }
 
-    public function add()
-    {
-        $checkin = $this->io->post('checkin');
-        $checkout = $this->io->post('checkout');
-        $adult = $this->io->post('adult');
-        $child = $this->io->post('child');
-        $this->Sched_Model->add($checkin, $checkout, $adult, $child);
-        $this->call->helper('url');
-        redirect('/home');
-    }
-    public function feedback()
-    {
-
-        $feedback = $this->io->post('feedback');
-        $this->Room_Model->send_feedback($feedback);
-        $this->call->helper('url');
-        redirect('/home');
-    }
+    
+   
 
 
     public function roomdata()
@@ -241,39 +240,98 @@ class Welcome extends Controller
 
     public function admin()
     {
-        $this->call->view('admin');
+        $data = $this->Sched_Model->read();
+
+        $this->call->view('admin',$data);
     }
 
-    public function bookingDashboard()
-    {
-        $data = $this->Room_Model->getdata();
-        $this->call->view('BookingAdmin', $data);
-    }
+   
+    
     public function delete($id)
     {
-        if ($this->Room_Model->delete($id))
-            redirect('/bookingDashboard');
+        if ($this->Sched_Model->delete($id))
+            redirect('index.php/bookingDashboard');
     }
 
     public function edit($id)
     {
-        $data = $this->Room_Model->booking_data($id);
+        $data = $this->Sched_Model->booking_data($id);
         $this->call->view('editBooking', $data);
     }
     public function update()
     {
-        $id = $this->io->post('id');
+        $sched_id = $this->io->post('sched_id'); 
         $checkin = $this->io->post('checkin');
         $checkout = $this->io->post('checkout');
         $adult = $this->io->post('adult');
         $child = $this->io->post('child');
-        $this->Room_Model->edit($id, $checkin, $checkout, $adult, $child);
-        redirect('/bookingDashboard');
+        $manifest = $this->io->post('manifest');
+    
+        $this->Sched_Model->edit($checkin, $checkout, $adult, $child, $manifest, $sched_id);
+        redirect('index.php/bookingDashboard');
     }
+    
     public function logout()
     {
         unset($_SESSION['email']);
         return $this->call->view('/login');
+    }
+    public function addManifest()
+    {
+        $usr = $_SESSION['id'];
+        $name = $this->io->post('name');
+    
+        $this->Manifest_Model->add($name, $usr);
+        $this->call->helper('url');
+        redirect('index.php/room');
+    }
+    
+    public function feedback()
+    {
+        $usr = $_SESSION['id'];
+
+        $feedback = $this->io->post('feedback');
+        $this->Room_Model->send_feedback($feedback,$usr);
+        $this->call->helper('url');
+        redirect('index.php/home');
+    }
+
+
+
+
+    public function add()
+    {
+        $usr = $_SESSION['id'];
+
+        $checkin = $this->io->post('checkin');
+        $checkout = $this->io->post('checkout');
+        $adult = $this->io->post('adult');
+        $child = $this->io->post('child');
+        $manifest = $this->io->post('manifest');
+
+        $this->Sched_Model->add($checkin, $checkout, $adult, $child,$manifest,$usr);
+        $this->call->helper('url');
+        redirect('index.php/home');
+    }
+    public function bookingDashboard()
+    {
+        $data = $this->Sched_Model->read();
+        $this->call->view('BookingAdmin', $data);
+    }
+
+
+
+
+
+    public function getFeed()
+    {
+        $data = $this->Feed_Model->read();
+        $this->call->view('Feed', $data);
+    }
+    public function fdelete($fid)
+    {
+        if ($this->Feed_Model->fdelete($fid))
+            redirect('/getFeed');
     }
 }
 

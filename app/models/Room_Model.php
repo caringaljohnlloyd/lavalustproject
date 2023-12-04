@@ -16,37 +16,14 @@ class Room_Model extends Model
     {
         return $this->db->table('sched')->get_all();
     }
-    public function delete($id)
-    {
-        $result = $this->db->table('sched')->where(array('id' => $id))->delete();
-        if ($result) {
-            return true;
-        }
-    }
-    public function edit($id, $checkin, $checkout,$adult,$child)
-    {
-        $data = array(
-            'checkin' => $checkin,
-            'checkout' => $checkout,
-            'adult' => $adult,
-            'child' => $child,
-        );
-        $result = $this->db->table('sched')->where('id', $id)->update($data);
-        if ($result) {
-            return true;
-        }
-    }
 
-    public function booking_data($id)
-    {
-        return $this->db->table('sched')->where(array('id' => $id))->get();
-    }
-    
-    public function send_feedback($feedback)
+    public function send_feedback($feedback,$id)
     {
        
         $data = array(
             'feedback' => $feedback,
+            'id' => $id,
+
         );
         return $this->db->table('feedback')
             ->insert($data);

@@ -6,28 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-name" content="mono"/>
 
-  <title>Mono - Responsive Admin & Dashboard Template</title>
+  <title>Eduardo's Admin</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
   <link href="public/plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
   <link href="public/plugins/simplebar/simplebar.css" rel="stylesheet" />
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
   <!-- public/PLUGINS CSS STYLE -->
-  <link href="public/plugins/nprogress/nprogress.css" rel="stylesheet" />
+  <link href="<?= base_url() ?>public/plugins/nprogress/nprogress.css" rel="stylesheet" />
   
   
   
   
-  <link href="public/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="<?= base_url() ?>public/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+  
+                    
+  
+  <link href="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
   
   
   
-  <link href="public/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
-  
-  
-  
-  <link href="public/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <link href="<?= base_url() ?>public/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
   
   
   
@@ -35,17 +36,17 @@
   
   
   
-  <link href="public/plugins/toaster/toastr.min.css" rel="stylesheet" />
+  <link href="<?= base_url() ?>public/plugins/toaster/toastr.min.css" rel="stylesheet" />
   
   
   <!-- MONO CSS -->
-  <link id="main-css-href" rel="stylesheet" href="public/css/admin.css" />
+  <link id="main-css-href" rel="stylesheet" href="<?= base_url() ?>public/css/admin.css" />
 
   
 
 
   <!-- FAVICON -->
-  <link href="public/public/images/favicon.png" rel="shortcut icon" />
+  <link href="<?= base_url() ?>public/public/images/favicon.png" rel="shortcut icon" />
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -55,7 +56,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script src="public/plugins/nprogress/nprogress.js"></script>
+  <script src="<?= base_url() ?>public/plugins/nprogress/nprogress.js"></script>
 
   <style>
       .app-brand a img {
@@ -91,7 +92,7 @@
             <!-- Aplication Brand -->
             <div class="app-brand">
               <a href="/index.html">
-                <img src="public/img/logo.png" >
+                <img src="<?= base_url() ?>public/img/logo.png" >
                 <span class="brand-name">Eduardo's Resort</span>
               </a>
             </div>
@@ -137,834 +138,34 @@
                 
                   <li
                    >
-                    <a class="sidenav-item-link" href="chat.html">
+                    <a class="sidenav-item-link"  href="<?= site_url('/getFeed'); ?>">
                       <i class="mdi mdi-wechat"></i>
                       <span class="nav-text">Chat</span>
                     </a>
                   </li>
                 
 
-                
+           
 
                 
-                  <li
-                   >
-                    <a class="sidenav-item-link" href="contacts.html">
-                      <i class="mdi mdi-phone"></i>
-                      <span class="nav-text">Contacts</span>
-                    </a>
-                  </li>
                 
-
-                
-
-                
-                  <li
-                   >
-                    <a class="sidenav-item-link" href="team.html">
-                      <i class="mdi mdi-account-group"></i>
-                      <span class="nav-text">Team</span>
-                    </a>
-                  </li>
-                
-
-                
-
-                
-                  <li
-                   >
-                    <a class="sidenav-item-link" href="calendar.html">
-                      <i class="mdi mdi-calendar-check"></i>
-                      <span class="nav-text">Calendar</span>
-                    </a>
-                  </li>
-                
-
-                
-
-                
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#email"
-                      aria-expanded="false" aria-controls="email">
-                      <i class="mdi mdi-email"></i>
-                      <span class="nav-text">email</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="email"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="email-inbox.html">
-                                <span class="nav-text">Email Inbox</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="email-details.html">
-                                <span class="nav-text">Email Details</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="email-compose.html">
-                                <span class="nav-text">Email Compose</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                      </div>
-                    </ul>
-                  </li>
-                
-
-                
-
-                
-                  <li class="section-title">
-                    UI Elements
-                  </li>
-                
-
-                
-
-                
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
-                      aria-expanded="false" aria-controls="ui-elements">
-                      <i class="mdi mdi-folder-outline"></i>
-                      <span class="nav-text">UI Components</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="ui-elements"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="alert.html">
-                                <span class="nav-text">Alert</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="badge.html">
-                                <span class="nav-text">Badge</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="breadcrumb.html">
-                                <span class="nav-text">Breadcrumb</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#buttons"
-                            aria-expanded="false" aria-controls="buttons">
-                            <span class="nav-text">Buttons</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="buttons">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="button-default.html">Button Default</a>
-                              </li>
-                              
-                              <li >
-                                <a href="button-dropdown.html">Button Dropdown</a>
-                              </li>
-                              
-                              <li >
-                                <a href="button-group.html">Button Group</a>
-                              </li>
-                              
-                              <li >
-                                <a href="button-social.html">Button Social</a>
-                              </li>
-                              
-                              <li >
-                                <a href="button-loading.html">Button Loading</a>
-                              </li>
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="card.html">
-                                <span class="nav-text">Card</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="carousel.html">
-                                <span class="nav-text">Carousel</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="collapse.html">
-                                <span class="nav-text">Collapse</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="editor.html">
-                                <span class="nav-text">Editor</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="list-group.html">
-                                <span class="nav-text">List Group</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="modal.html">
-                                <span class="nav-text">Modal</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="pagination.html">
-                                <span class="nav-text">Pagination</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="popover-tooltip.html">
-                                <span class="nav-text">Popover & Tooltip</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="progress-bar.html">
-                                <span class="nav-text">Progress Bar</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="spinner.html">
-                                <span class="nav-text">Spinner</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="switches.html">
-                                <span class="nav-text">Switches</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables"
-                            aria-expanded="false" aria-controls="tables">
-                            <span class="nav-text">Tables</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="tables">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="bootstarp-tables.html">Bootstrap Tables</a>
-                              </li>
-                              
-                              <li >
-                                <a href="data-tables.html">Data Tables</a>
-                              </li>
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="tab.html">
-                                <span class="nav-text">Tab</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="toaster.html">
-                                <span class="nav-text">Toaster</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
-                            aria-expanded="false" aria-controls="icons">
-                            <span class="nav-text">Icons</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="icons">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="material-icons.html">Material Icon</a>
-                              </li>
-                              
-                              <li >
-                                <a href="flag-icons.html">Flag Icon</a>
-                              </li>
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
-
-                        
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
-                            aria-expanded="false" aria-controls="forms">
-                            <span class="nav-text">Forms</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="forms">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="basic-input.html">Basic Input</a>
-                              </li>
-                              
-                              <li >
-                                <a href="input-group.html">Input Group</a>
-                              </li>
-                              
-                              <li >
-                                <a href="checkbox-radio.html">Checkbox & Radio</a>
-                              </li>
-                              
-                              <li >
-                                <a href="form-validation.html">Form Validation</a>
-                              </li>
-                              
-                              <li >
-                                <a href="form-advance.html">Form Advance</a>
-                              </li>
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
-
-                        
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
-                            aria-expanded="false" aria-controls="maps">
-                            <span class="nav-text">Maps</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="maps">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="google-maps.html">Google Map</a>
-                              </li>
-                              
-                              <li >
-                                <a href="vector-maps.html">Vector Map</a>
-                              </li>
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
-
-                        
-                        
-                        <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#widgets"
-                            aria-expanded="false" aria-controls="widgets">
-                            <span class="nav-text">Widgets</span> <b class="caret"></b>
-                          </a>
-                          <ul  class="collapse"  id="widgets">
-                            <div class="sub-menu">
-                              
-                              <li >
-                                <a href="widgets-general.html">General Widget</a>
-                              </li>
-                              
-                              <li >
-                                <a href="widgets-chart.html">Chart Widget</a>
-                              </li>
-                              
-                            </div>
-                          </ul>
-                        </li>
-                        
-
-                        
-                      </div>
-                    </ul>
-                  </li>
-                
-
-                
-
-                
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
-                      aria-expanded="false" aria-controls="charts">
-                      <i class="mdi mdi-chart-pie"></i>
-                      <span class="nav-text">Charts</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="charts"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="apex-charts.html">
-                                <span class="nav-text">Apex Charts</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                      </div>
-                    </ul>
-                  </li>
-                
-
-                
-
-                
-                  <li class="section-title">
-                    Pages
-                  </li>
-                
-
-                
-
-                
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
-                      aria-expanded="false" aria-controls="users">
-                      <i class="mdi mdi-image-filter-none"></i>
-                      <span class="nav-text">User</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="users"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="user-profile.html">
-                                <span class="nav-text">User Profile</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="user-activities.html">
-                                <span class="nav-text">User Activities</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="user-profile-settings.html">
-                                <span class="nav-text">User Profile Settings</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="user-account-settings.html">
-                                <span class="nav-text">User Account Settings</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="user-planing-settings.html">
-                                <span class="nav-text">User Planing Settings</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="user-billing.html">
-                                <span class="nav-text">User billing</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="user-notify-settings.html">
-                                <span class="nav-text">User Notify Settings</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                      </div>
-                    </ul>
-                  </li>
-                
-
-                
-
-                
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#authentication"
-                      aria-expanded="false" aria-controls="authentication">
-                      <i class="mdi mdi-account"></i>
-                      <span class="nav-text">Authentication</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="authentication"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="sign-in.html">
-                                <span class="nav-text">Sign In</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="sign-up.html">
-                                <span class="nav-text">Sign Up</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="reset-password.html">
-                                <span class="nav-text">Reset Password</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                      </div>
-                    </ul>
-                  </li>
-                
-
-                
-
-                
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#other-page"
-                      aria-expanded="false" aria-controls="other-page">
-                      <i class="mdi mdi-file-multiple"></i>
-                      <span class="nav-text">Other pages</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="other-page"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="invoice.html">
-                                <span class="nav-text">Invoice</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="404.html">
-                                <span class="nav-text">404 page</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="page-comingsoon.html">
-                                <span class="nav-text">Coming Soon</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="page-maintenance.html">
-                                <span class="nav-text">Maintenance</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                      </div>
-                    </ul>
-                  </li>
-                
-
-                
-
-                
-                  <li class="section-title">
-                    Documentation
-                  </li>
-                
-
-                
-
-                
-                  <li
-                   >
-                    <a class="sidenav-item-link" href="getting-started.html">
-                      <i class="mdi mdi-airplane"></i>
-                      <span class="nav-text">Getting Started</span>
-                    </a>
-                  </li>
-                
-
-                
-
-                
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#customization"
-                      aria-expanded="false" aria-controls="customization">
-                      <i class="mdi mdi-square-edit-outline"></i>
-                      <span class="nav-text">Customization</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="customization"
-                      data-parent="#sidebar-menu">
-                      <div class="sub-menu">
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="navbar-customization.html">
-                                <span class="nav-text">Navbar</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="sidebar-customization.html">
-                                <span class="nav-text">Sidebar</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                        
-                          
-                            <li >
-                              <a class="sidenav-item-link" href="styling.html">
-                                <span class="nav-text">Styling</span>
-                                
-                              </a>
-                            </li>
-                          
-                        
-
-                        
-                      </div>
-                    </ul>
-                  </li>
-                
-
-                
-              </ul>
-
-            </div>
-
-            <div class="sidebar-footer">
+  
+           
+          </div>
+          <div class="sidebar-footer">
               <div class="sidebar-footer-content">
                 <ul class="d-flex">
                   <li>
-                    <a href="user-account-settings.html" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
-                  <li>
-                    <a href="#" data-toggle="tooltip" title="No chat messages"><i class="mdi mdi-chat-processing"></i></a>
-                  </li>
+                  <button class="btn btn-primary text-dark logout-logo-btn">
+                                <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?>">Logout</a>
+                                </i>
+                            </button>                
+                            
                 </ul>
               </div>
             </div>
-          </div>
+   </div>
+   
         </aside>
 
       
@@ -1048,7 +249,7 @@
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="public/images/user/user-sm-02.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -1082,7 +283,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="public/images/user/user-sm-03.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -1141,7 +342,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="public/images/user/user-sm-01.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-01.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -1158,7 +359,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="public/images/user/user-sm-03.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -1175,7 +376,7 @@
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="public/images/user/user-sm-02.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -1193,7 +394,7 @@
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="public/images/user/user-sm-04.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-04.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -1280,10 +481,12 @@
                   <!-- User Account -->
                   <li class="dropdown user-menu">
                     <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                      <img src="public/images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
+                      <img src="<?= base_url() ?>public/images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
                       <span class="d-none d-lg-inline-block">John Doe</span>
                     </button>
+                    
                     <ul class="dropdown-menu dropdown-menu-right">
+
                       <li>
                         <a class="dropdown-link-item" href="user-profile.html">
                           <i class="mdi mdi-account-outline"></i>
@@ -1501,7 +704,7 @@
                   <div class="col-12">
                     <div class="card card-default">
                       <div class="card-header">
-                        <h2>Products Inventory</h2>
+                        <h2>Manifest Inventory</h2>
                         <div class="dropdown">
                           <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> Yearly Chart
@@ -1518,460 +721,26 @@
                         <table id="productsTable" class="table table-hover table-product" style="width:100%">
                           <thead>
                             <tr>
-                              <th></th>
-                              <th>Product Name</th>
-                              <th>ID</th>
-                              <th>Qty</th>
-                              <th>Variants</th>
-                              <th>Committed</th>
-                              <th>Daily Sale</th>
-                              <th>Sold</th>
-                              <th>In Stock</th>
-                              <th></th>
+                             
+                              <th>Name/Age</th>
+                            
                             </tr>
                           </thead>
                           <tbody>
+                          <?php foreach ($data as $datas): ?>
 
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-01.jpg" alt="Product Image">
-                              </td>
-                              <td>Coach Swagger</td>
-                              <td>24541</td>
-                              <td>27</td>
-                              <td>1</td>
-                              <td>2</td>
-                              <td>
-                                <div id="tbl-chart-01"></div>
-                              </td>
-                              <td>4</td>
-                              <td>18</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
+                              <tr>
 
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
+                                <td> <?= $datas['manifest'] ?></td>
+                              
                             </tr>
 
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-02.jpg" alt="Product Image">
-                              </td>
-                              <td>Toddler Shoes, Gucci Watch</td>
-                              <td>24542</td>
-                              <td>18</td>
-                              <td>7</td>
-                              <td>5</td>
-                              <td>
-                                <div id="tbl-chart-02"></div>
-                              </td>
-                              <td>1</td>
-                              <td>14</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
+                            </tbody>
+                          <?php endforeach; ?>    
 
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-03.jpg" alt="Product Image">
-                              </td>
-                              <td>Hat Black Suits</td>
-                              <td>24543</td>
-                              <td>20</td>
-                              <td>3</td>
-                              <td>7</td>
-                              <td>
-                                <div id="tbl-chart-03"></div>
-                              </td>
-                              <td>6</td>
-                              <td>26</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-04.jpg" alt="Product Image">
-                              </td>
-                              <td>Backpack Gents</td>
-                              <td>24544</td>
-                              <td>37</td>
-                              <td>8</td>
-                              <td>3</td>
-                              <td>
-                                <div id="tbl-chart-04"></div>
-                              </td>
-                              <td>6</td>
-                              <td>7</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-05.jpg" alt="Product Image">
-                              </td>
-                              <td>Speed 500 Ignite</td>
-                              <td>24545</td>
-                              <td>8</td>
-                              <td>3</td>
-                              <td>4</td>
-                              <td>
-                                <div id="tbl-chart-05"></div>
-                              </td>
-                              <td>8</td>
-                              <td>42</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-06.jpg" alt="Product Image">
-                              </td>
-                              <td>Olay</td>
-                              <td>24546</td>
-                              <td>19</td>
-                              <td>6</td>
-                              <td>6</td>
-                              <td>
-                                <div id="tbl-chart-06"></div>
-                              </td>
-                              <td>79</td>
-                              <td>12</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-07.jpg" alt="Product Image">
-                              </td>
-                              <td>Ledger Nano X</td>
-                              <td>24547</td>
-                              <td>61</td>
-                              <td>46</td>
-                              <td>18</td>
-                              <td>
-                                <div id="tbl-chart-07"></div>
-                              </td>
-                              <td>76</td>
-                              <td>36</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-08.jpg" alt="Product Image">
-                              </td>
-                              <td>Surface Laptop 2</td>
-                              <td>24548</td>
-                              <td>33</td>
-                              <td>56</td>
-                              <td>89</td>
-                              <td>
-                                <div id="tbl-chart-08"></div>
-                              </td>
-                              <td>38</td>
-                              <td>5</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-09.jpg" alt="Product Image">
-                              </td>
-                              <td>TIGI Bed Head Superstar Queen</td>
-                              <td>24549</td>
-                              <td>3</td>
-                              <td>9</td>
-                              <td>15</td>
-                              <td>
-                                <div id="tbl-chart-09"></div>
-                              </td>
-                              <td>6</td>
-                              <td>46</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-10.jpg" alt="Product Image">
-                              </td>
-                              <td>Wattbike Atom</td>
-                              <td>24550</td>
-                              <td>61</td>
-                              <td>56</td>
-                              <td>68</td>
-                              <td>
-                                <div id="tbl-chart-10"></div>
-                              </td>
-                              <td>3</td>
-                              <td>19</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-11.jpg" alt="Product Image">
-                              </td>
-                              <td>Smart Watch</td>
-                              <td>24551</td>
-                              <td>19</td>
-                              <td>76</td>
-                              <td>38</td>
-                              <td>
-                                <div id="tbl-chart-11"></div>
-                              </td>
-                              <td>3</td>
-                              <td>17</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-12.jpg" alt="Product Image">
-                              </td>
-                              <td>Magic Bullet Blender</td>
-                              <td>24552</td>
-                              <td>12</td>
-                              <td>30</td>
-                              <td>14</td>
-                              <td>
-                                <div id="tbl-chart-12"></div>
-                              </td>
-                              <td>26</td>
-                              <td>9</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-13.jpg" alt="Product Image">
-                              </td>
-                              <td>Kanana rucksack</td>
-                              <td>24553</td>
-                              <td>14</td>
-                              <td>65</td>
-                              <td>39</td>
-                              <td>
-                                <div id="tbl-chart-13"></div>
-                              </td>
-                              <td>9</td>
-                              <td>55</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-14.jpg" alt="Product Image">
-                              </td>
-                              <td>Copic Opaque White</td>
-                              <td>24554</td>
-                              <td>43</td>
-                              <td>29</td>
-                              <td>75</td>
-                              <td>
-                                <div id="tbl-chart-14"></div>
-                              </td>
-                              <td>7</td>
-                              <td>15</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-                            <tr>
-                              <td class="py-0">
-                                <img src="public/images/products/products-xs-15.jpg" alt="Product Image">
-                              </td>
-                              <td>Headphones</td>
-                              <td>24555</td>
-                              <td>17</td>
-                              <td>6</td>
-                              <td>7</td>
-                              <td>
-                                <div id="tbl-chart-15"></div>
-                              </td>
-                              <td>6</td>
-                              <td>98</td>
-                              <td>
-                                <div class="dropdown">
-                                  <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                  </a>
-
-                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-
-
-
-                          </tbody>
                         </table>
-
+            
+    
                       </div>
                     </div>
                   </div>
@@ -2178,7 +947,7 @@
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                               <li>
                                 <a href="#" class="user-link">
-                                  <img src="public/images/user/user-sm-01.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-01.jpg" alt="User Image">
                                   <span class="username">anna patuary
                                     <span class="badge badge-secondary">18</span>
                                   </span>
@@ -2189,7 +958,7 @@
                               </li>
                               <li>
                                 <a href="#" class="user-link">
-                                  <img src="public/images/user/user-sm-02.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-02.jpg" alt="User Image">
                                   <span class="username">riman Ghose
                                     <span class="badge badge-secondary">18</span>
                                   </span>
@@ -2200,7 +969,7 @@
                               </li>
                               <li>
                                 <a href="#" class="user-link">
-                                  <img src="public/images/user/user-sm-03.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-03.jpg" alt="User Image">
                                   <span class="username">riman Ghose
                                     <span class="badge badge-secondary">18</span>
                                   </span>
@@ -2211,7 +980,7 @@
                               </li>
                               <li>
                                 <a href="#" class="user-link">
-                                  <img src="public/images/user/user-sm-04.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-04.jpg" alt="User Image">
                                   <span class="username">riman Ghose
                                     <span class="badge badge-secondary">18</span>
                                   </span>
@@ -2222,7 +991,7 @@
                               </li>
                               <li>
                                 <a href="#" class="user-link">
-                                  <img src="public/images/user/user-sm-05.jpg" alt="User Image">
+                                  <img src="<?= base_url() ?>public/images/user/user-sm-05.jpg" alt="User Image">
                                   <span class="username">riman Ghose</span>
                                   <span class="state">15min</span>
                                 </a>
@@ -2233,7 +1002,7 @@
                         <div class="card-body pb-0" data-simplebar style="height: 363px;">
                           <!-- Media Chat Left -->
                           <div class="media media-chat">
-                            <img src="public/images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
+                            <img src="<?= base_url() ?>public/images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
                             <div class="media-body">
                               <div class="text-content">
                                 <span class="message">Hello my name is anna.</span>
@@ -2254,12 +1023,12 @@
                                 <time class="time">3 mins ago</time>
                               </div>
                             </div>
-                            <img src="public/images/user/user-sm-02.jpg" class="rounded-circle" alt="Avata Image">
+                            <img src="<?= base_url() ?>public/images/user/user-sm-02.jpg" class="rounded-circle" alt="Avata Image">
                           </div>
 
                           <!-- Media Chat Left -->
                           <div class="media media-chat">
-                            <img src="public/images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
+                            <img src="<?= base_url() ?>public/images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
                             <div class="media-body">
                               <div class="text-content">
                                 <span class="message">Its had resolving otherwise she contented therefore.</span>
@@ -2439,7 +1208,7 @@
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
                             <a href="user-profile.html">
-                              <img src="public/images/user/user-sm-01.jpg" alt="User Image">
+                              <img src="<?= base_url() ?>public/images/user/user-sm-01.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
@@ -2454,7 +1223,7 @@
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
                             <a href="user-profile.html">
-                              <img src="public/images/user/user-sm-02.jpg" alt="User Image">
+                              <img src="<?= base_url() ?>public/images/user/user-sm-02.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
@@ -2469,7 +1238,7 @@
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
                             <a href="user-profile.html">
-                              <img src="public/images/user/user-sm-03.jpg" alt="User Image">
+                              <img src="<?= base_url() ?>public/images/user/user-sm-03.jpg" alt="User Image">
                             </a>
                           </div>
                           <div class="media-body">
@@ -2483,7 +1252,7 @@
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
                             <a href="user-profile.html">
-                              <img src="public/images/user/user-sm-04.jpg" alt="User Image">
+                              <img src="<?= base_url() ?>public/images/user/user-sm-04.jpg" alt="User Image">
                             </a>
 
                           </div>
@@ -2498,7 +1267,7 @@
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
                             <a href="user-profile.html">
-                              <img src="public/images/user/user-sm-05.jpg" alt="User Image">
+                              <img src="<?= base_url() ?>public/images/user/user-sm-05.jpg" alt="User Image">
                               <span class="active bg-danger"></span>
                             </a>
                           </div>
@@ -2513,7 +1282,7 @@
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
                             <a href="user-profile.html">
-                              <img src="public/images/user/user-sm-06.jpg" alt="User Image">
+                              <img src="<?= base_url() ?>public/images/user/user-sm-06.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
                           </div>
@@ -2531,29 +1300,29 @@
 
 
     
-                    <script src="public/plugins/jquery/jquery.min.js"></script>
-                    <script src="public/plugins/bootstrap/public/js/bootstrap.bundle.min.js"></script>
-                    <script src="public/plugins/simplebar/simplebar.min.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/jquery/jquery.min.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/bootstrap/public/js/bootstrap.bundle.min.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/simplebar/simplebar.min.js"></script>
                     <script src="https://unpkg.com/hotkeys-public/js/dist/hotkeys.min.js"></script>
 
                     
                     
-                    <script src="public/plugins/apexcharts/apexcharts.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/apexcharts/apexcharts.js"></script>
                     
                     
                     
-                    <script src="public/plugins/DataTables/DataTables-1.10.18/public/js/jquery.dataTables.min.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/DataTables/DataTables-1.10.18/public/js/jquery.dataTables.min.js"></script>
                     
                     
                     
-                    <script src="public/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
-                    <script src="public/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
-                    <script src="public/plugins/jvectormap/jquery-jvectormap-us-aea.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/jvectormap/jquery-jvectormap-us-aea.js"></script>
                     
                     
                     
-                    <script src="public/plugins/daterangepicker/moment.min.js"></script>
-                    <script src="public/plugins/daterangepicker/daterangepicker.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/daterangepicker/moment.min.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/daterangepicker/daterangepicker.js"></script>
                     <script>
                       jQuery(document).ready(function() {
                         jQuery('input[name="dateRange"]').daterangepicker({
@@ -2578,14 +1347,14 @@
                     
                     
                     
-                    <script src="public/plugins/toaster/toastr.min.js"></script>
+                    <script src="<?= base_url() ?>public/plugins/toaster/toastr.min.js"></script>
 
                     
                     
-                    <script src="public/js/mono.js"></script>
-                    <script src="public/js/chart.js"></script>
-                    <script src="public/js/map.js"></script>
-                    <script src="public/js/custom.js"></script>
+                    <script src="<?= base_url() ?>public/js/mono.js"></script>
+                    <script src="<?= base_url() ?>public/js/chart.js"></script>
+                    <script src="<?= base_url() ?>public/js/map.js"></script>
+                    <script src="<?= base_url() ?>public/js/custom.js"></script>
 
                     
 
