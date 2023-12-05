@@ -125,7 +125,10 @@ class Welcome extends Controller
                 if (password_verify($password, $user['password'])) {
                     if ($user['is_verified']) {
                         if ($user['role'] === 'admin') {
-                            $data = $this->Manifest_Model->read();
+                            $data['sched_data'] = $this->Sched_Model->read();
+
+                            $data['staff_data'] = $this->Staff_Model->getStaff();
+
 
                             $this->call->view('admin',$data);
                         } else {
@@ -198,6 +201,7 @@ class Welcome extends Controller
         $this->call->model('Room_Model');
         $this->call->model('Manifest_Model');
         $this->call->model('Feed_Model');
+        $this->call->model('Staff_Model');
 
 
 
@@ -228,31 +232,6 @@ class Welcome extends Controller
         $this->call->view('Contact');
     }
 
-    public function add()
-    {
-        $checkin = $this->io->post('checkin');
-        $checkout = $this->io->post('checkout');
-        $adult = $this->io->post('adult');
-        $child = $this->io->post('child');
-        $this->Sched_Model->add($checkin, $checkout, $adult, $child);
-        $this->call->helper('url');
-        redirect('/home');
-    }
-
-    public function feedback()
-    {
-        $d = $_SESSION['id'];
-
-            $feedback = $this->io->post('feedback');
-            $this->Room_Model->send_feedback($feedback, $d);
-            $this->call->helper('url');
-            redirect('/home');
-        }
-        public function feedbackdata()
-        {
-            $data = $this->Room_Model->show_feedback();
-            $this->call->view('welcome_page', $data);
-        }
     
    
 
@@ -265,14 +244,104 @@ class Welcome extends Controller
 
     public function admin()
     {
-        $this->call->view('admin'); 
-        $data = $this->Sched_Model->read();
-
+        $data['sched_data'] = $this->Sched_Model->read();
+        $data['staff_data'] = $this->Staff_Model->getStaff();
         $this->call->view('admin',$data);
     }
-
-   
+    public function addStaffForm()
+    {
+        $this->call->helper('url');
+        $this->call->view('add_staff_form');
+    }
+    public function addStaff()
+    {
+        // Check if the form is submitted
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Extract data from $_POST
+            $name = isset($_POST['staff_name']) ? $_POST['staff_name'] : '';
     
+            if (isset($_FILES['staff_image']) && $_FILES['staff_image']['error'] === UPLOAD_ERR_OK) {
+                // Process the uploaded file
+                $uploadDir = 'public/uploads/';
+                $uploadFile = $uploadDir . basename($_FILES["staff_image"]["name"]);
+    
+                if (move_uploaded_file($_FILES["staff_image"]["tmp_name"], $uploadFile)) {
+                    // File upload successful
+                    $imageFileName = basename($uploadFile);
+    
+                    // Call the insert method with the uploaded file path
+                    if ($this->Staff_Model->addStaff($name, $imageFileName)) {
+                        redirect('index.php/admin');
+                    } else {
+                        // Handle insert error
+                        $this->call->view('index.php/admin');
+                    }
+                } else {
+                    // Handle file move error
+                    echo "File upload failed.";
+                }
+            } else {
+                echo "File upload error: " . $_FILES["staff_image"]["error"];
+            }
+        }
+    }
+    
+
+        
+public function deleteStaff($staffId)
+{
+   if( $this->Staff_Model->deleteStaff($staffId))
+
+    redirect(site_url('index.php/admin'));
+}
+
+public function updateStaffPage($staff_id)
+{
+    $data = $this->Staff_Model->getStaffById($staff_id);
+    $this->call->view('update_staff', $data);
+}
+
+public function updateStaff()
+{
+    // Check if the form is submitted
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Extract data from $_POST
+        $staff_id = isset($_POST['staff_id']) ? $_POST['staff_id'] : '';
+        $staff_name = isset($_POST['staff_name']) ? $_POST['staff_name'] : '';
+
+        // Check if the file is uploaded successfully
+        if (isset($_FILES['staff_image']) && $_FILES['staff_image']['error'] === UPLOAD_ERR_OK) {
+            // Process the uploaded file
+            $uploadDir = 'public/uploads/';
+            $uploadFile = $uploadDir . basename($_FILES["staff_image"]["name"]);
+
+            if (move_uploaded_file($_FILES["staff_image"]["tmp_name"], $uploadFile)) {
+                // File upload successful
+                $staff_image = basename($uploadFile);
+
+                // Call the update method with the uploaded file path
+                $this->Staff_Model->updateStaff($staff_id, $staff_name, $staff_image);
+
+                // Redirect to the /admin page
+                redirect('index.php/admin');
+            } else {
+                // Handle file move error
+                echo "File upload failed.";
+            }
+        } else {
+            // Handle file upload error
+            echo "File upload error: " . $_FILES["staff_image"]["error"];
+        }
+    }
+}
+
+
+
+
+
+
+
+
     public function delete($id)
     {
         if ($this->Sched_Model->delete($id))

@@ -61,11 +61,15 @@ $router->get('/edit/(:num)', 'Welcome::edit');
 $router->match('/edit/(:num)', 'Welcome::update','GET|POST');
 $router->get('/logout', 'Welcome::logout');
 $router->post('feedback', 'Welcome::feedback');
-$router->get('/feedbackdata', 'Welcome::feedbackdata');
 $router->post('addManifest', 'Welcome::addManifest');
 $router->get('/getFeed', 'Welcome::getFeed');
 $router->get('fdelete/(:num)','Welcome::fdelete');
+$router->post('admin/deleteStaff/(:num)', 'Welcome::deleteStaff');
 
+$router->get('/admin/addStaffForm', 'Welcome::addStaffForm');
+$router->post('/admin/addStaff', 'Welcome::addStaff');
+$router->get('/admin/updateStaffPage/(:num)', 'Welcome::updateStaffPage');
+$router->post('/admin/updateStaff/(:num)', 'Welcome::updateStaff');
 
 
 $router->post('/validate_reg', 'Welcome::register_val');

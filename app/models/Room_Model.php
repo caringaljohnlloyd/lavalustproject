@@ -23,15 +23,13 @@ class Room_Model extends Model
         return $this->db->table('sched')->where(array('id' => $id))->get();
     }
     
-    public function send_feedback($feedback,$user_id)
     public function send_feedback($feedback,$id)
     {
        
         $data = array(
             'feedback' => $feedback,
-            'id' =>  $user_id,
+            'id' =>  $id,
            
-            'id' => $id,
 
         );
        
