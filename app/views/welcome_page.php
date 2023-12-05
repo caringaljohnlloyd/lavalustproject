@@ -59,7 +59,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
         <div class="img-color container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a href="index.html"
+                    <a href="<?= site_url('/home') ?> "
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                         <img src="<?= base_url() ?>public/img/logo.png">
                         <h4 class="m-0 text-primary text-uppercase">Eduardo's Resort</h4>
@@ -70,11 +70,11 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                         <div class="col-lg-7 px-5 text-start">
                             <div class="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i class="fa fa-envelope text-primary me-2"></i>
-                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">eduardosresortreservation@gmail.com</p>
                             </div>
                             <div class="h-100 d-inline-flex align-items-center py-2">
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+012 345 6789</p>
+                                <p class="mb-0">0921 507 4378</p>
                             </div>
                         </div>
                         <div class="col-lg-5 px-5 text-end">
@@ -100,6 +100,8 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                                 <a href="<?= site_url('index.php/home') ?> " class="nav-item nav-link active">Home</a>
                                 <a href="<?= site_url('index.php/bago') ?> " class="nav-item nav-link">About</a>
                                 <a href="<?= site_url('index.php/service') ?> " class="nav-item nav-link">Services</a>
+                                <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link">Rooms</a>
+
                                 <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link">Manifest</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -128,13 +130,11 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
             <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="w-100" src="<?= base_url() ?>public/img/carousel-1.jpg" alt="Image">
+                        <img class="w-100" src="<?= base_url() ?>public/img/pool4.jpg" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury
-                                    Living</h6>
-                                <h1 class="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious
-                                    Hotel</h1>
+                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Your Escape to Paradise</h6>
+                                <h1 class="display-3 text-white mb-4 animated slideInDown"> SAVING LIVES BUILDING COMPANIONS!</h1>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our
                                     Rooms</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
@@ -142,14 +142,12 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100" src="<?= base_url() ?>public/img/carousel-2.jpg" alt="Image">
+                        <img class="w-100" src="<?= base_url() ?>public/img/eagleview.jpg" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
-                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury
-                                    Living</h6>
-                                <h1 class="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious
-                                    Hotel</h1>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our
+                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown"> Your Ultimate Getaway</h6>
+                                <h1 class="display-3 text-white mb-4 animated slideInDown">  Enjoy, Relax & Have Fun in the Cool & Therapeutic Waters</h1>
+                                <a href="<?= site_url('/room') ?>" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our
                                     Rooms</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
                             </div>
@@ -174,7 +172,12 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
         <!-- Booking Start -->
         <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container">
+     
                 <div class="bg-white shadow" style="padding: 35px;">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title text-center text-primary text-uppercase">Room Booking</h6>
+                    <h1 class="mb-5">Book <span class="text-primary text-uppercase">Now!</span></h1>
+                </div>
                     <form action="<?php echo site_url('add'); ?>" method="post">
                         <div class="row g-3">
                             <div class="col-md-3">
@@ -234,10 +237,10 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
-                        <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">Hotelier</span></h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-                            diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                            dolore erat amet</p>
+                        <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">Eduardo's</span></h1>
+                        <p class="mb-4">            Eduardo's Resort promotes tourism in the province, provides
+            employment to local residents, helps the farmers maximize product of
+            agricultural crops and supports swimmers and athletes.</p>
                         <div class="row g-3 pb-4">
                             <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="border rounded p-1">
@@ -293,49 +296,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
             </div>
         </div>
         <!-- About End -->
-        <!-- Video Start -->
-        <div class="container-xxl py-5 px-0 wow zoomIn" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5">
-                        <h6 class="section-title text-start text-white text-uppercase mb-3">Luxury Living</h6>
-                        <h1 class="text-white mb-4">Discover A Brand Luxurious Hotel</h1>
-                        <p class="text-white mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                            diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo
-                            magna dolore erat amet</p>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Our Rooms</a>
-                        <a href="" class="btn btn-light py-md-3 px-md-5">Book A Room</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="video">
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- 16:9 aspect ratio -->
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
-                                allowscriptaccess="always" allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Video Start -->
 
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title text-center text-primary text-uppercase">FEEDBACKS</h6>
@@ -355,127 +316,41 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s"
-            style="margin-bottom: 90px;">
-            <div class="container">
-                <div class="owl-carousel testimonial-carousel py-5">
-                    
+<!-- Testimonial Start -->
+<div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s"
+    style="margin-bottom: 90px;">
+    <div class="container">
+        <?php if (!empty($data)) : ?>
+            <div class="owl-carousel testimonial-carousel py-5">
+                <?php foreach ($data as $datas) : ?>
                     <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet
-                            diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
+                        <p><?= $datas['feedback'] ?></p>
                         <div class="d-flex align-items-center">
                             <img class="img-fluid flex-shrink-0 rounded"
-                                src="<?= base_url() ?>public/img/testimonial-1.jpg" style="width: 45px; height: 45px;">
+                                src="<?= base_url() ?>public/img/testimonial-1.jpg"
+                                style="width: 45px; height: 45px;">
                             <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
+                                <h6 class="fw-bold mb-1"></h6>
+                                <small><?= $datas['id'] ?></small>
                             </div>
                         </div>
                         <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </div>
-        </div>
+        <?php else : ?>
+          
+            <p>No testimonials available.</p>
+        <?php endif; ?>
+    </div>
+</div>
+<!-- Testimonial End -->
 
-        <!-- Testimonial End -->
 
 
 
 
-        <!-- Team Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
-                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="../<?= base_url() ?>public/img/team-1.jpg" alt="">
-                                <div
-                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="../<?= base_url() ?>public/img/team-2.jpg" alt="">
-                                <div
-                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="../<?= base_url() ?>public/img/team-3.jpg" alt="">
-                                <div
-                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="../<?= base_url() ?>public/img/team-4.jpg" alt="">
-                                <div
-                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
+       
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
             <div class="container pb-5">
@@ -483,21 +358,17 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                     <div class="col-md-6 col-lg-4">
                         <div class="bg-primary rounded p-4">
                             <a href="index.html">
-                                <h1 class="text-white text-uppercase mb-3">Hotelier</h1>
+                                <h1 class="text-white text-uppercase mb-3">Eduardo's</h1>
                             </a>
-                            <p class="text-white mb-0">
-                                Download <a class="text-dark fw-medium"
-                                    href="https://htmlcodex.com/hotel-html-template-pro">Hotelier – Premium Version</a>,
-                                build a professional website for your hotel business and grab the attention of new
-                                visitors upon your site’s launch.
-                            </p>
+                         All Right Reserved. Designed By Eduardo's
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Nautical Highway Bayanan II, Calapan City, Oriental Mindoro, Philippines</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0921 507 4378</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>
+eduardosresortreservation@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -531,11 +402,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        </div>
+ 
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
                                 <a href="">Home</a>

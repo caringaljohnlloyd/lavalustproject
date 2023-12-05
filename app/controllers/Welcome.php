@@ -228,6 +228,31 @@ class Welcome extends Controller
         $this->call->view('Contact');
     }
 
+    public function add()
+    {
+        $checkin = $this->io->post('checkin');
+        $checkout = $this->io->post('checkout');
+        $adult = $this->io->post('adult');
+        $child = $this->io->post('child');
+        $this->Sched_Model->add($checkin, $checkout, $adult, $child);
+        $this->call->helper('url');
+        redirect('/home');
+    }
+
+    public function feedback()
+    {
+        $d = $_SESSION['id'];
+
+            $feedback = $this->io->post('feedback');
+            $this->Room_Model->send_feedback($feedback, $d);
+            $this->call->helper('url');
+            redirect('/home');
+        }
+        public function feedbackdata()
+        {
+            $data = $this->Room_Model->show_feedback();
+            $this->call->view('welcome_page', $data);
+        }
     
    
 
@@ -240,6 +265,7 @@ class Welcome extends Controller
 
     public function admin()
     {
+        $this->call->view('admin'); 
         $data = $this->Sched_Model->read();
 
         $this->call->view('admin',$data);

@@ -61,6 +61,7 @@ $router->get('/edit/(:num)', 'Welcome::edit');
 $router->match('/edit/(:num)', 'Welcome::update','GET|POST');
 $router->get('/logout', 'Welcome::logout');
 $router->post('feedback', 'Welcome::feedback');
+$router->get('/feedbackdata', 'Welcome::feedbackdata');
 $router->post('addManifest', 'Welcome::addManifest');
 $router->get('/getFeed', 'Welcome::getFeed');
 $router->get('fdelete/(:num)','Welcome::fdelete');

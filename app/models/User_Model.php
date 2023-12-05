@@ -6,6 +6,7 @@ class User_Model extends Model {
     public function __construct() {
         parent::__construct();
         $this->call->database();
+        
     }
 
     public function get_user_by_email($email) {

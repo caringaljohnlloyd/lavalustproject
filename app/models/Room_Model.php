@@ -7,6 +7,7 @@ class Room_Model extends Model
     {
         parent::__construct();
         $this->call->database();
+        $this->call->library('session');
     }
     public function read()
     {
@@ -17,21 +18,33 @@ class Room_Model extends Model
         return $this->db->table('sched')->get_all();
     }
 
+    public function booking_data($id)
+    {
+        return $this->db->table('sched')->where(array('id' => $id))->get();
+    }
+    
+    public function send_feedback($feedback,$user_id)
     public function send_feedback($feedback,$id)
     {
        
         $data = array(
             'feedback' => $feedback,
+            'id' =>  $user_id,
+           
             'id' => $id,
 
         );
-        return $this->db->table('feedback')
+       
+            return $this->db->table('feedback')
             ->insert($data);
+
     }
-    
-    
+    public function show_feedback()
+    {
+        return $this->db->table('feedback')->get_all();
+    }
+
+
 }
-
-
 
 
