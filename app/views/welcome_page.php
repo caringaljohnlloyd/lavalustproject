@@ -178,6 +178,19 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                     <h6 class="section-title text-center text-primary text-uppercase">Room Booking</h6>
                     <h1 class="mb-5">Book <span class="text-primary text-uppercase">Now!</span></h1>
                 </div>
+                <?php
+            // Check for success message
+            if (isset($_SESSION['success_message'])) {
+                echo '<div class="alert alert-success" role="alert">' . $_SESSION['success_message'] . '</div>';
+                unset($_SESSION['success_message']); // Clear the session variable
+            }
+
+            // Check for error message
+            if (isset($_SESSION['error_message'])) {
+                echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error_message'] . '</div>';
+                unset($_SESSION['error_message']); // Clear the session variable
+            }
+            ?>
                     <form action="<?php echo site_url('add'); ?>" method="post">
                         <div class="row g-3">
                             <div class="col-md-3">
