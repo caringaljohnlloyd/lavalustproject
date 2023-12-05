@@ -45,4 +45,24 @@ public function updateStaff($staff_id, $staff_name,$staff_image)
     $this->db->table('staff')->where('staff_id', $staff_id)->update($data);
 }
 
+
+public function countStaff() {
+    $data = $this->db->raw('select * from staff');
+    
+
+    echo $this->db->row_count();
+}
+
+public function countFeedback() {
+    $data = $this->db->raw('select * from feedback');
+    
+
+    echo $this->db->row_count();
+}
+public function countUser() {
+    $data = $this->db->raw('select * from crud');
+    
+
+    echo $this->db->row_count();
+}
 }

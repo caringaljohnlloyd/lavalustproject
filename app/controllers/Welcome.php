@@ -428,6 +428,17 @@ public function updateStaff()
         if ($this->Feed_Model->fdelete($fid))
             redirect('/getFeed');
     }
+    public function staffcount() {
+        $data = $this->Staff_Model->countStaff();
+        $this->call->view('welcome_page', $data);
+    }
+    
+
+    
+    
+    
+    
+    
 }
 
 ?>

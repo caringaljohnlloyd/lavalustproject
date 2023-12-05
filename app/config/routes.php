@@ -66,6 +66,9 @@ $router->get('/getFeed', 'Welcome::getFeed');
 $router->get('fdelete/(:num)','Welcome::fdelete');
 $router->post('admin/deleteStaff/(:num)', 'Welcome::deleteStaff');
 
+$router->get('/staffcount', 'Welcome::staffcount');
+
+
 $router->get('/admin/addStaffForm', 'Welcome::addStaffForm');
 $router->post('/admin/addStaff', 'Welcome::addStaff');
 $router->get('/admin/updateStaffPage/(:num)', 'Welcome::updateStaffPage');

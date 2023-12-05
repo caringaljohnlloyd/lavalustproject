@@ -94,19 +94,17 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav mr-auto py-0">
-                                <a href="<?= site_url('index.php/home') ?> " class="nav-item nav-link ">Home</a>
-                                <a href="<?= site_url('/bago') ?> " class="nav-item nav-link active">About</a>
-                                <a href="<?= site_url('index.php/service') ?> " class="nav-item nav-link">Services</a>
-                                <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link">Rooms</a>
+    <div class="navbar-nav mx-auto py-0"> <!-- Use mx-auto to center -->
+        <a href="<?= site_url('index.php/home') ?>" class="nav-item nav-link ">Home</a>
+        <a href="<?= site_url('index.php/bago') ?>" class="nav-item nav-link active">About</a>
+        <a href="<?= site_url('index.php/service') ?>" class="nav-item nav-link">Services</a>
+        <a href="<?= site_url('index.php/contact') ?>" class="nav-item nav-link">Contact</a>
+    </div>
+    <button class="btn btn-primary text-dark logout-logo-btn">
+        <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?>">Logout</a></i>
+    </button>
+</div>
 
-                                <a href="<?=site_url('index.php/contact')?> " class="nav-item nav-link">Contact</a>
-                            </div>
-                            <button class="btn btn-primary logout-logo-btn">
-                                <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?>">Logout</a>
-                                </i>
-                            </button>
-                        </div>
                     </nav>
                 </div>
             </div>

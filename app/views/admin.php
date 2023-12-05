@@ -780,7 +780,7 @@
                 <?php $LAVA->call->model('Staff_Model'); ?>
 
                 <?php
-                $staff_data = $LAVA->Staff_Model->getStaff(); // Replace with your actual method
+                $staff_data = $LAVA->Staff_Model->getStaff(); // Replace with your actual method 
                 foreach ($staff_data as $datas) {
                     echo "<tr>";
 

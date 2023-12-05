@@ -98,7 +98,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                                 <a href="<?= site_url('/home') ?> " class="nav-item nav-link ">Home</a>
                                 <a href="<?= site_url('index.php/bago') ?> " class="nav-item nav-link">About</a>
                                 <a href="<?= site_url('index.php/service') ?> " class="nav-item nav-link">Services</a>
-                                <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link active">Rooms</a>
+                              
 
 
                                 <a href="<?=site_url('index.php/contact')?> " class="nav-item nav-link">Contact</a>

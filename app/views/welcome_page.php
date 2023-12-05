@@ -96,28 +96,17 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav mr-auto py-0">
-                                <a href="<?= site_url('index.php/home') ?> " class="nav-item nav-link active">Home</a>
-                                <a href="<?= site_url('index.php/bago') ?> " class="nav-item nav-link">About</a>
-                                <a href="<?= site_url('index.php/service') ?> " class="nav-item nav-link">Services</a>
-                                <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link">Rooms</a>
+    <div class="navbar-nav mx-auto py-0"> <!-- Use mx-auto to center -->
+        <a href="<?= site_url('index.php/home') ?>" class="nav-item nav-link active">Home</a>
+        <a href="<?= site_url('index.php/bago') ?>" class="nav-item nav-link">About</a>
+        <a href="<?= site_url('index.php/service') ?>" class="nav-item nav-link">Services</a>
+        <a href="<?= site_url('index.php/contact') ?>" class="nav-item nav-link">Contact</a>
+    </div>
+    <button class="btn btn-primary text-dark logout-logo-btn">
+        <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?>">Logout</a></i>
+    </button>
+</div>
 
-                                <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link">Manifest</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">Booking</a>
-                                        <a href="team.html" class="dropdown-item">Our Team</a>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    </div>
-                                </div>
-                                <a href="<?= site_url('index.php/contact') ?> " class="nav-item nav-link">Contact</a>
-                            </div>
-                            <button class="btn btn-primary text-dark logout-logo-btn">
-                                <i class="fas fa-power-off logout-icon"><a href="<?= site_url('/logout'); ?> ">Logout</a>
-                                </i>
-                            </button>
-                        </div>
                     </nav>
                 </div>
             </div>
@@ -242,34 +231,55 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
             employment to local residents, helps the farmers maximize product of
             agricultural crops and supports swimmers and athletes.</p>
                         <div class="row g-3 pb-4">
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="mb-0">Rooms</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="mb-0">Staffs</p>
-                                    </div>
-                                </div>
-                            </div>
+
+                        
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+    <div class="border rounded p-1">
+        <div class="border rounded text-center p-4">
+            <i class="fa fa-users fa-2x text-primary mb-2"></i>
+            <?php $LAVA =& lava_instance(); ?>
+            <?php $LAVA->call->model('Staff_Model'); ?>
+            <?php $staff_data = $LAVA->Staff_Model->countFeedback(); ?>
+
+            <h2  class="mb-1" data-toggle="counter-up">
+               
+                
+            
+            </h2>
+            <p class="mb-0">Feedback</p>
+        </div>
+    </div>
+</div>
+
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+    <div class="border rounded p-1">
+        <div class="border rounded text-center p-4">
+            <i class="fa fa-users fa-2x text-primary mb-2"></i>
+            <?php $LAVA =& lava_instance(); ?>
+            <?php $LAVA->call->model('Staff_Model'); ?>
+            <?php $staff_data = $LAVA->Staff_Model->countStaff(); ?>
+
+            <h2  class="mb-1" data-toggle="counter-up">
+               
+                    <?= (isset($data['staff_id'])) ?>
+            
+            </h2>
+            <p class="mb-0">Staff</p>
+        </div>
+    </div>
+</div>
+
                             <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="border rounded p-1">
                                     <div class="border rounded text-center p-4">
                                         <i class="fa fa-users fa-2x text-primary mb-2"></i>
                                         <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="mb-0">Clients</p>
+                                        <p class="mb-0">User</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <a class="btn btn-primary py-3 px-5 mt-2" href="">Explore More</a>
                     </div>
                     <div class="col-lg-6">
@@ -292,6 +302,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -418,23 +429,23 @@ eduardosresortreservation@gmail.com</p>
         <!-- Footer End -->
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+         <!-- Back to Top -->
+         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
 
-    <script src="../public/lib/wow/wow.min.js"></script>
-    <script src="../public/lib/easing/easing.min.js"></script>
-    <script src="../public/lib/waypoints/waypoints.min.js"></script>
-    <script src="../public/lib/counterup/counterup.min.js"></script>
-    <script src="../public/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../public/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="../public/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="../public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/wow/wow.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/easing/easing.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/waypoints/waypoints.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/counterup/counterup.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="<?= base_url() ?>public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../public/js/main.js"></script>
+    <script src="<?= base_url() ?>public/js/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
