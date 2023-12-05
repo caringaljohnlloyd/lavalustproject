@@ -397,18 +397,28 @@ public function updateStaff()
     public function add()
     {
         $usr = $_SESSION['id'];
-
+    
         $checkin = $this->io->post('checkin');
         $checkout = $this->io->post('checkout');
         $adult = $this->io->post('adult');
         $child = $this->io->post('child');
         $manifest = $this->io->post('manifest');
-
-        $this->Sched_Model->add($checkin, $checkout, $adult, $child,$manifest,$usr);
+    
+        // Add the booking
+        $bookingId = $this->Sched_Model->add($checkin, $checkout, $adult, $child, $manifest, $usr);
+    
+        if ($bookingId) {
+            // Booking successful, set success message
+            $_SESSION['success_message'] = 'Booking successful! Your booking ID is ' . $bookingId;
+        } else {
+            // Booking failed, set error message if needed
+            $_SESSION['error_message'] = 'Booking failed. Please try again.';
+        }
+    
         $this->call->helper('url');
         redirect('index.php/home');
     }
-    public function bookingDashboard()
+        public function bookingDashboard()
     {
         $data = $this->Sched_Model->read();
         $this->call->view('BookingAdmin', $data);
