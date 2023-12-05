@@ -100,19 +100,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                                 <a href="<?= site_url('index.php/service') ?> " class="nav-item nav-link">Services</a>
                                 <a href="<?= site_url('index.php/room') ?>" class="nav-item nav-link ">Rooms</a>
 
-                                <a href="<?= site_url('index.php/contact') ?> " class="nav-item nav-link active">Contact</a>
-                                <a href="<?=site_url('index.php/home')?> " class="nav-item nav-link ">Home</a>
-                                <a href="<?=site_url('index.php/bago')?> "class="nav-item nav-link">About</a>
-                                <a href="<?=site_url('index.php/service')?> " class="nav-item nav-link">Services</a>
-                                <a href="<?=site_url('index.php/room')?>" class="nav-item nav-link">Manifest</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">Booking</a>
-                                        <a href="team.html" class="dropdown-item">Our Team</a>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    </div>
-                                </div>
+
                                 <a href="<?=site_url('index.php/contact')?> " class="nav-item nav-link active" >Contact</a>
                             </div>
                             <button class="btn btn-primary logout-logo-btn">
