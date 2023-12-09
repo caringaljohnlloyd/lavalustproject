@@ -252,11 +252,11 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
             <i class="fa fa-users fa-2x text-primary mb-2"></i>
             <?php $LAVA =& lava_instance(); ?>
             <?php $LAVA->call->model('Staff_Model'); ?>
-            <?php $staff_data = $LAVA->Staff_Model->countFeedback(); ?>
+          
 
             <h2  class="mb-1" data-toggle="counter-up">
                
-                
+            <?php  $LAVA->Staff_Model->countFeedback(); ?>
             
             </h2>
             <p class="mb-0">Feedback</p>
@@ -270,11 +270,11 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
             <i class="fa fa-users fa-2x text-primary mb-2"></i>
             <?php $LAVA =& lava_instance(); ?>
             <?php $LAVA->call->model('Staff_Model'); ?>
-            <?php $staff_data = $LAVA->Staff_Model->countStaff(); ?>
+          
 
             <h2  class="mb-1" data-toggle="counter-up">
                
-                    <?= (isset($data['staff_id'])) ?>
+            <?php  $LAVA->Staff_Model->countStaff(); ?>
             
             </h2>
             <p class="mb-0">Staff</p>
@@ -286,7 +286,10 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                                 <div class="border rounded p-1">
                                     <div class="border rounded text-center p-4">
                                         <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                        <?php $LAVA =& lava_instance(); ?>
+            <?php $LAVA->call->model('Staff_Model'); ?>
+            
+                                        <h2 class="mb-1" data-toggle="counter-up"> <?php  $LAVA->Staff_Model->countUser(); ?></h2>
                                         <p class="mb-0">User</p>
                                     </div>
                                 </div>
@@ -340,35 +343,37 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-<!-- Testimonial Start -->
-<div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s"
-    style="margin-bottom: 90px;">
+
+
+    <!-- Testimonial Start -->
+<div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
     <div class="container">
-        <?php if (!empty($data)) : ?>
-            <div class="owl-carousel testimonial-carousel py-5">
+        <div class="owl-carousel testimonial-carousel py-5">
+            <?php if ($data && is_array($data)) : ?>
                 <?php foreach ($data as $datas) : ?>
                     <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p><?= $datas['feedback'] ?></p>
+                        <p><?= $datas['username']; ?></p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded"
-                                src="<?= base_url() ?>public/img/testimonial-1.jpg"
-                                style="width: 45px; height: 45px;">
+                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg" style="width: 45px; height: 45px;">
                             <div class="ps-3">
-                                <h6 class="fw-bold mb-1"></h6>
-                                <small><?= $datas['id'] ?></small>
+                                <h6 class="fw-bold mb-1"><?= $datas['feedback']; ?></h6>
+                                <small><?= $datas['profession']; ?></small>
                             </div>
                         </div>
                         <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
                 <?php endforeach; ?>
-            </div>
-        <?php else : ?>
-          
-            <p>No testimonials available.</p>
-        <?php endif; ?>
+            <?php else : ?>
+                <!-- Handle the case when $data is null or not an array -->
+                <p>No data available</p>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
 <!-- Testimonial End -->
+
+       
+
 
 
 

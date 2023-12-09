@@ -23,12 +23,16 @@ class Welcome extends Controller
 
     public function login()
     {
-        if(!isset($_SESSION['id'])){
-        redirect(site_url('/'));
-        }
         $this->call->helper('url');
+    
+        if(isset($_SESSION['id'])){
+            // User is already logged in, redirect to a different page
+            redirect(site_url('welcome_page')); // Change 'dashboard' to the desired page
+        }
+    
         $this->call->view('login');
     }
+    
 
     public function account()
     {
@@ -303,33 +307,24 @@ public function updateStaffPage($staff_id)
 
 public function updateStaff()
 {
-    // Check if the form is submitted
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Extract data from $_POST
         $staff_id = isset($_POST['staff_id']) ? $_POST['staff_id'] : '';
         $staff_name = isset($_POST['staff_name']) ? $_POST['staff_name'] : '';
 
-        // Check if the file is uploaded successfully
         if (isset($_FILES['staff_image']) && $_FILES['staff_image']['error'] === UPLOAD_ERR_OK) {
-            // Process the uploaded file
             $uploadDir = 'public/uploads/';
             $uploadFile = $uploadDir . basename($_FILES["staff_image"]["name"]);
 
             if (move_uploaded_file($_FILES["staff_image"]["tmp_name"], $uploadFile)) {
-                // File upload successful
                 $staff_image = basename($uploadFile);
 
-                // Call the update method with the uploaded file path
                 $this->Staff_Model->updateStaff($staff_id, $staff_name, $staff_image);
 
-                // Redirect to the /admin page
                 redirect('index.php/admin');
             } else {
-                // Handle file move error
                 echo "File upload failed.";
             }
         } else {
-            // Handle file upload error
             echo "File upload error: " . $_FILES["staff_image"]["error"];
         }
     }
@@ -404,14 +399,11 @@ public function updateStaff()
         $child = $this->io->post('child');
         $manifest = $this->io->post('manifest');
     
-        // Add the booking
         $bookingId = $this->Sched_Model->add($checkin, $checkout, $adult, $child, $manifest, $usr);
     
         if ($bookingId) {
-            // Booking successful, set success message
             $_SESSION['success_message'] = 'Booking successful! Your booking ID is ' . $bookingId;
         } else {
-            // Booking failed, set error message if needed
             $_SESSION['error_message'] = 'Booking failed. Please try again.';
         }
     
@@ -431,8 +423,12 @@ public function updateStaff()
     public function getFeed()
     {
         $data = $this->Feed_Model->read();
+        print_r($data); // Check the result here
         $this->call->view('Feed', $data);
+        $this->call->view('welcome_page', $data);
+
     }
+    
     public function fdelete($fid)
     {
         if ($this->Feed_Model->fdelete($fid))

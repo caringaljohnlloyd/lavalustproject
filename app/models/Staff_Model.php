@@ -65,4 +65,11 @@ public function countUser() {
 
     echo $this->db->row_count();
 }
+
+public function countestimonial() {
+    $data = $this->db->raw('select * from crud');
+    
+
+    echo $this->db->row_count();
+}
 }
