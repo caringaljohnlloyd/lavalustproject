@@ -27,6 +27,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
   <link href="public/plugins/simplebar/simplebar.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="public/lib/animate/animate.min.css" rel="stylesheet">
@@ -346,30 +347,45 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
 
 
     <!-- Testimonial Start -->
-<div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
+    <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
     <div class="container">
-        <div class="owl-carousel testimonial-carousel py-5">
-            <?php if ($data && is_array($data)) : ?>
-                <?php foreach ($data as $datas) : ?>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p><?= $datas['username']; ?></p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1"><?= $datas['feedback']; ?></h6>
-                                <small><?= $datas['profession']; ?></small>
+        <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <?php if ($data && is_array($data)) : ?>
+                    <?php $first = true; ?>
+                    <?php foreach ($data as $datas) : ?>
+                        <div class="carousel-item <?php echo $first ? 'active' : ''; ?>">
+                            <div class="testimonial-item position-relative bg-white rounded overflow-hidden p-4">
+                                <p class="mb-3"><?= $datas['username']; ?></p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid flex-shrink-0 rounded me-3" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+                                    <div>
+                                        <h6 class="fw-bold mb-1"><?= $datas['feedback']; ?></h6>
+                                    </div>
+                                </div>
+                                <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                             </div>
                         </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
-                    </div>
-                <?php endforeach; ?>
-            <?php else : ?>
-                <!-- Handle the case when $data is null or not an array -->
-                <p>No data available</p>
-            <?php endif; ?>
+                        <?php $first = false; ?>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <!-- Handle the case when $data is null or not an array -->
+                    <p class="text-white">No feedback available</p>
+                <?php endif; ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </div>
+
+
 <!-- Testimonial End -->
 
        
@@ -461,6 +477,8 @@ eduardosresortreservation@gmail.com</p>
     <script src="<?= base_url() ?>public/lib/tempusdominus/js/moment.min.js"></script>
     <script src="<?= base_url() ?>public/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="<?= base_url() ?>public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="<?= base_url() ?>public/js/main.js"></script>

@@ -11,8 +11,9 @@ class Welcome extends Controller
     public function index()
     {
         $this->call->helper('url');
+        $data = $this->Feed_Model->read();
 
-        $this->call->view('welcome_page');
+        $this->call->view('welcome_page', $data);
     }
     public function register()
     {
@@ -425,8 +426,6 @@ public function updateStaff()
         $data = $this->Feed_Model->read();
         print_r($data); // Check the result here
         $this->call->view('Feed', $data);
-        $this->call->view('welcome_page', $data);
-
     }
     
     public function fdelete($fid)

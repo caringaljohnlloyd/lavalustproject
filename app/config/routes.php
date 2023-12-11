@@ -65,6 +65,7 @@ $router->post('addManifest', 'Welcome::addManifest');
 $router->get('/getFeed', 'Welcome::getFeed');
 $router->get('fdelete/(:num)','Welcome::fdelete');
 $router->post('admin/deleteStaff/(:num)', 'Welcome::deleteStaff');
+$router->get('/home', 'Welcome::getFeedhome');
 
 $router->get('/staffcount', 'Welcome::staffcount');
 
